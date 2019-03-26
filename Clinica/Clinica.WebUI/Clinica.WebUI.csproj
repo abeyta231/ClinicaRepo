@@ -175,6 +175,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PacienteAdministradorController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -273,6 +274,10 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\PacienteAdministrador\Index.cshtml" />
+    <Content Include="Views\PacienteAdministrador\Agrega.cshtml" />
+    <Content Include="Views\PacienteAdministrador\Edita.cshtml" />
+    <Content Include="Views\PacienteAdministrador\Elimina.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -287,6 +292,24 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Clinica.Core\Clinica.Core.csproj">
+      <Project>{5db969d4-a686-451b-8ead-7a0ffeeb5968}</Project>
+      <Name>Clinica.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Clinica.DataAccess.InMemory\Clinica.DataAccess.InMemory.csproj">
+      <Project>{dbd9f674-af99-49af-a974-b2d3484bf10e}</Project>
+      <Name>Clinica.DataAccess.InMemory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Clinica.DataAccess.SQL\Clinica.DataAccess.SQL.csproj">
+      <Project>{10a602a3-a6c7-4505-8859-45aa94158afc}</Project>
+      <Name>Clinica.DataAccess.SQL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Clinica.Services\Clinica.Services.csproj">
+      <Project>{baab13d3-5136-48fd-aa72-cdbc839dcfda}</Project>
+      <Name>Clinica.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
