@@ -94,19 +94,8 @@ namespace Clinica.WebUI.Controllers
             }
         }
 
-        
-        public ActionResult Elimina(Paciente paciente, string Id)
-        {
-            Paciente pacienteEliminar = context.Buscar(Id);
-            if (pacienteEliminar == null)
-            {
-                return HttpNotFound();
-            }
-            else
-            {
-                    return View(pacienteEliminar);              
-            }
-        }
+
+
 
         [HttpPost]
         [ActionName("Elimina")]
