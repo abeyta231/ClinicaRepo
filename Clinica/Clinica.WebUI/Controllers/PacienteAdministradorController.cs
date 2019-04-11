@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Clinica.Core.Models;
 using Clinica.DataAccess.InMemory;
+using Rotativa;
 
 namespace Clinica.WebUI.Controllers
 {
@@ -72,8 +73,10 @@ namespace Clinica.WebUI.Controllers
                 }
 
                 pacienteEditar.Nombre = paciente.Nombre;
-                pacienteEditar.peso = paciente.peso;
+                pacienteEditar.FechaDeNacimiento = paciente.FechaDeNacimiento;
+                pacienteEditar.Peso = paciente.Peso;
                 pacienteEditar.Sexo = paciente.Sexo;
+                pacienteEditar.CorreoElectronico = paciente.CorreoElectronico;
 
                 context.Guardar();
                 return RedirectToAction("Index");
@@ -92,6 +95,14 @@ namespace Clinica.WebUI.Controllers
             {
                 return View(paciente);
             }
+        }
+
+      
+
+        public ActionResult GeneratePDF(string Id)
+        {
+            Paciente paciente = context.Buscar(Id);
+            return new ViewAsPdf("GeneratePDF", paciente);
         }
 
 

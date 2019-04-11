@@ -1,0 +1,97 @@
+﻿@model Clinica.Core.Models.Paciente
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    @*<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">*@
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   
+    <style type="text/css" media="screen">
+
+        .left {
+            position: absolute;
+            left: 0px;
+            width: 300px;
+            
+            padding: 10px;
+        }
+
+      .header p{text-align : center;
+          font-size : 24pt;
+          
+        }
+
+      .header h2{
+           text-align : center;
+           text-decoration : underline;
+
+       }
+
+
+        .header h4 {
+            text-align : right;
+            vertical-align : middle;
+            color : darkgrey;
+        }
+
+        .patient p {
+           text-align : left;
+           font-size :16pt;
+           font-weight : normal;
+        }
+
+        .header {
+            content: " ";
+            display: block;
+            border-bottom: 8px solid #fffd6f;
+        }
+         .container h2{
+             text-align : center;
+         }
+        
+       
+        
+
+    </style>
+</head>
+<body>
+   
+    <div class="header">
+        <div class="left">
+            <img src="Content/logo.png" alt="Logo" height="75" width="230">
+        </div>
+        <br />
+        <br />
+        <h4>FOLIO:_____________</h4>  
+        <p>-  TARJETA DE IDENTIFICACIÓN DEL PACIENTE  -<p />
+        <h4>FECHA: @Html.DisplayFor(model => model.FechaActual)</h4>
+
+    </div>
+    <div class="container">
+
+        
+
+        <h2>DATOS PERSONALES</h2>
+        <div class="patient">
+         
+            <p>NOMBRE:   @Html.DisplayFor(model => model.Nombre) </p>
+            <p>FECHA DE NACIMIENTO @Html.DisplayFor(model => model.FechaDeNacimiento)</p>
+            <p>EDAD @Html.DisplayFor(model => model.Edad)</p>
+            <p>SEXO @Html.DisplayFor(model => model.Sexo)</p>
+        
+     
+            
+        </div>
+
+         
+
+    </div>
+</body>
+</html> 

@@ -24,8 +24,12 @@
             @Html.DisplayNameFor(model => model.Sexo)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.peso)
+            @Html.DisplayNameFor(model => model.Peso)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CorreoElectronico)
+        </th>
+        
         <th></th>
     </tr>
 
@@ -44,11 +48,16 @@
             @Html.DisplayFor(modelItem => item.Sexo)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.peso)
+            @Html.DisplayFor(modelItem => item.Peso)
         </td>
         <td>
+            @Html.DisplayFor(modelItem => item.CorreoElectronico)
+        </td>
+
+        <td>
             @Html.ActionLink("Editar", "Edita", new { id = item.Id }) |
-            @Html.ActionLink("Eliminar", "Elimina", new { id = item.Id }) 
+            @Html.ActionLink("Eliminar", "Elimina", new { id = item.Id })
+            @Html.ActionLink("Crear PDF", "GeneratePDF", new { id = item.Id })
 
         </td>
     </tr>
