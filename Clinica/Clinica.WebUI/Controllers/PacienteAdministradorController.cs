@@ -41,7 +41,9 @@ namespace Clinica.WebUI.Controllers
             {
                 context.AgregaPaciente(paciente);
                 context.Guardar();
+              
             }
+
             return RedirectToAction("Index");
         }
 
@@ -77,6 +79,7 @@ namespace Clinica.WebUI.Controllers
                 pacienteEditar.Peso = paciente.Peso;
                 pacienteEditar.Sexo = paciente.Sexo;
                 pacienteEditar.CorreoElectronico = paciente.CorreoElectronico;
+                pacienteEditar.EstudioSolicitado = paciente.EstudioSolicitado;
 
                 context.Guardar();
                 return RedirectToAction("Index");

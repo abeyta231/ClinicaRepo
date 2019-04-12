@@ -9,6 +9,7 @@
 
 
 
+
 <h2>Agrega</h2>
 
 
@@ -68,7 +69,15 @@
             @Html.ValidationMessageFor(model => model.CorreoElectronico, "", new { @class = "text-danger" })
         </div>
     </div>
- 
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.EstudioSolicitado, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.EstudioSolicitado, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.EstudioSolicitado, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
 
 
 
@@ -82,11 +91,17 @@
 
     </div>
 
+
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Create" class="btn btn-default" />
+            <input type="submit" value="Agregar" class="btn btn-default" onclick="return foo();" />
         </div>
     </div>
+
+
+
+
+
 </div>
 
 
@@ -102,35 +117,23 @@
     <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
 
     <script type="text/javascript">
-        //$(function () {
-        //    $(".date-picker").datepicker({
-        //        changeMonth: true,
-        //        changeYear: true,
-        //        yearRange: "-100:+0", // You can set the year range as per as your need
-        //        dateFormat: 'dd-M-yy'
-        //    });
-
         $(function () {
             $(".date-picker").datepicker({
-
                 changeMonth: true,
                 changeYear: true,
                 yearRange: "-100:+0", // You can set the year range as per as your need
-
-                onChangeMonthYear: function (year, month, inst) {
-                    var curDate = $(this).datepicker("getDate");
-                    if (curDate == null)
-                        return;
-                    if (curDate.getYear() != year || curDate.getMonth() != month - 1) {
-                        curDate.setYear(year);
-                        curDate.setMonth(month - 1);
-                        $(this).datepicker("setDate", curDate);
-                    }
-                }
+                dateFormat: 'dd-M-yy'
             });
         });
 
- 
+        function foo() {
+            alert("Paciente Agregado");
+            return true;
+        }
+
+            
+
+
     </script>
 
 }
